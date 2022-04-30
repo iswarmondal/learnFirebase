@@ -1,29 +1,25 @@
 {
   "name": "learnfirebase",
   "version": "1.0.0",
-  "description": "This is my Firebase learning project",
+  "description": "This is my Firebase learning repo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iswarmondal/learnFirebase.git"
   },
-  "keywords": [
-    "firebase"
-  ],
-  "author": "Iswar",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/iswarmondal/learnFirebase/issues"
   },
   "homepage": "https://github.com/iswarmondal/learnFirebase#readme",
-  "dependencies": {
-    "firebase": "^9.6.3"
-  },
   "devDependencies": {
-    "webpack": "^5.66.0",
-    "webpack-cli": "^4.9.1"
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
   }
 }
