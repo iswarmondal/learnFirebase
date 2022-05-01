@@ -1,6 +1,7 @@
 import {initializeApp} from 'firebase/app';
 import {
-  getFirestore, collection, getDocs
+  getFirestore, collection, getDocs,
+  addDoc, doc, deleteDoc
 } from 'firebase/firestore'
 
 const firebaseConfig = {
@@ -32,3 +33,29 @@ const firebaseConfig = {
     }).catch(err => {
       throw err;
     })
+
+  // Add new entry
+  const addForm = document.querySelector(".add")
+
+  addForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    addDoc(colRef, {
+      title: addForm.title.value,
+      author: addForm.author.value
+    })
+      .then(() => addForm.reset())
+  })
+
+  // Delete documents
+  const deleteFrom = document.querySelector(".delete");
+  deleteFrom.addEventListener("submit", (e)=>{
+    e.preventDefault();
+
+    const docRef = doc(db, "books", deleteFrom.id.value);
+
+    deleteDoc(docRef)
+      .then(()=>{
+        deleteFrom.reset();
+      })
+  })
