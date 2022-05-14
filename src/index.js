@@ -7,7 +7,8 @@ import {
 
 import {
   getAuth, createUserWithEmailAndPassword,
-  signOut, signInWithEmailAndPassword
+  signOut, signInWithEmailAndPassword,
+  onAuthStateChanged
 } from 'firebase/auth'
 
 const firebaseConfig = {
@@ -132,4 +133,9 @@ login.addEventListener('submit', (e)=>{
     .catch((err)=>{
       console.log(err.message);
     })
+})
+
+// User auth status change
+onAuthStateChanged(auth, (user)=>{
+  console.log('The auth status changed : ', user);
 })
